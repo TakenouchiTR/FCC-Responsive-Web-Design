@@ -1,0 +1,68 @@
+/* CSS Reset */
+body, header, nav, main, h1, p, img, caption {
+    padding: 0;
+    margin: 0;
+}
+main {
+    background-color: #222;
+    padding: 1%;
+    min-height: 100vh;
+}
+
+.wrapper {
+    width: 90%;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #ddd;
+    margin: auto;
+    padding: 0% 5% 2% 5%;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+#head {
+    height: 10em;
+    text-align: center;
+    display: grid;
+}
+
+#title {
+    align-self: center;
+}
+
+#img-div {
+    display: grid;
+    justify-items: center;
+}
+
+#img-caption {
+    margin-top: 5px;
+    font-size: 1.5em;
+}
+
+#image {
+    width: 80%;
+    max-width: 1200px;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+#tribute-info {
+    padding: 2%;
+    width: 80%;
+    margin: 1% auto 0 auto;
+    border-radius: 8px;
+    text-align: justify;
+    background-color: #eee;
+    font-size: 1.2em;
+}
+
+#tribute-info p {
+    margin-top: 1.2em;
+}
+
+#tribute-info p:first-of-type {
+    margin-top: 0;
+}
