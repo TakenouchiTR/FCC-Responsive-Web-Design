@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <main>
+        <div id="heading">
+            <h1 id="title">TakenouchiTR Survey Form</h1>
+            <p id="description">Thank you for your feedback!</p>
+        </div>  
+
+        <form id="survey-form">
+            <fieldset>
+                <label for="name" id="name-label">Name<span class="required">*</span>:</label>
+                <input type="text" name="name" id="name" placeholder="First Last" required>
+
+                <label for="email" id="email-label">Email<span class="required">*</span>:</label>
+                <input type="email" name="email" id="email" placeholder="name@website.com" required>
+
+                <label for="number" id="number-label">Age:</label>
+                <input type="number" name="number" id="number" min="0" max="120" placeholder="42">
+            </fieldset>
+
+            <fieldset>
+                <div class="checks">
+                    <p class="checks-title">How did you find my repo:</p>
+                    <label for="rad-google" class="radio-label">
+                        <input type="radio" name="radio" id="rad-google" value="google"> Google
+                    </label>
+                    <label for="rad-forum" class="radio-label">
+                        <input type="radio" name="radio" id="rad-forum" value="forum"> Forum
+                    </label>
+                    <label for="rad-social" class="radio-label">
+                        <input type="radio" name="radio" id="rad-social" value="social"> Social Media
+                    </label>
+                    <label for="rad-other" class="radio-label">
+                        <input type="radio" name="radio" id="rad-other" value="other"> Other (Specify Below)
+                    </label>
+
+                    <label for="other" id="other-label">Other:</label>
+                    <input type="text" id="other" name="other"> 
+                </div>
+
+                <div class="checks">
+                    <p class="checks-title">Which programs do you use:</p>
+                    <label for="chk-hmv" class="check-label">
+                        <input type="checkbox" name="check" id="chk-hmv" value="hmv"> Himeji Map Viewer
+                    </label>
+                    <label for="chk-lsrp" class="check-label">
+                        <input type="checkbox" name="check" id="chk-lsrp" value="lsrp"> Line Sticker Ripper (Python)
+                    </label>
+                    <label for="chk-lsrj" class="check-label">
+                        <input type="checkbox" name="check" id="chk-lsrj" value="lsrj"> Line Sticker Ripper (Java)
+                    </label>
+                </div>
+
+                <label for="dropdown"  class="checks-title">Which program do you use the most:</label>
+                <select id="dropdown" name="dropdown" id="dropdown">
+                    <option>Himeji Map Viewer</option>
+                    <option>Line Sticker Ripper (Python)</option>
+                    <option>Line Sticker Ripper (Java)</option>
+                </select>
+            </fieldset>
+
+            <label for="textarea">Comments:</label>
+            <textarea id="textarea"></textarea>
+
+            <input type="submit" id="submit">
+        </form>
+    </main>
+</body>
+</html>
