@@ -190,6 +190,10 @@ ul {
     display: block;
 }
 
+#video {
+    display: none;
+}
+
 /* Tablet Viewports */
 @media screen and (max-width: 720px) {
 
