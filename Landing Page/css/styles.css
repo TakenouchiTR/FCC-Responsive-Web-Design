@@ -1,0 +1,263 @@
+/* CSS Reset */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Show desktop elements, hide mobile/tablet elements */
+.mobile, .tablet {
+    display: none;
+}
+
+.desktop {
+    display: block;
+}
+
+body {
+    width: 98vw;
+    margin: 0 auto;
+}
+
+#wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/*----- Header -----*/
+header {
+    width: 98%;
+    max-width: 1200px;
+    
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+
+    background-color: white;
+    border-bottom: 1px solid black;
+}
+
+#logo-name {
+    display: grid;
+    column-gap: 8px;
+    grid-template-columns: auto auto;
+    align-items: center;
+    padding: 8px;
+}
+
+#header-img {
+    max-width: 120px;
+    border-radius: 16px;
+}
+
+/*----- Nav -----*/
+#nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.25em;
+}
+
+.nav-link {
+    padding: 4px 8px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    transition: .5s;
+}
+
+.nav-link:hover {
+    background-color: #eee;
+}
+
+/*----- Main -----*/
+main {
+    width: 100%;
+}
+
+#form {
+    text-align: center;
+    margin: 150px auto 0 auto;
+}
+
+#form * {
+    display: block;
+    margin: 4px auto;
+}
+
+.page-section {
+    margin-top: 24px;
+}
+
+.page-section h2 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+#features {
+    margin-bottom: 64px;
+}
+
+#features-list, #options-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.feature, .option {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.feature {
+    width: 30%;
+}
+
+.option {
+    width: 45%;
+    max-width: 310px;
+    margin-bottom: 8px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.option img {
+    width: 100%;
+    border-radius: 0 0 4px 4px;
+}
+
+.feature-name {
+    border-bottom: 1px solid black;
+}
+
+.feature-desc {
+    margin-top: 8px;
+    text-align: justify;
+}
+
+#report {
+    margin: 32px auto;
+    width: 65%;
+    border: 1px solid #ccc;
+    border-radius: 4px 8px;
+    padding: 8px;
+}
+
+#report-form textarea {
+    width: 100%;
+    display: block;
+}
+
+#report-form {
+    margin-top: 10px;
+}
+
+#report input {
+    display: block;
+}
+
+#report label {
+    margin-top: 10px;
+}
+
+#report-submit {
+    margin-top: 10px;
+}
+
+.required {
+    color: red;
+}
+
+.block-label {
+    display: block;
+}
+
+/* Tablet Viewports */
+@media screen and (max-width: 720px) {
+
+    /* Show tablet elements, hide mobile/desktop elements */
+    .mobile, .desktop {
+        display: none;
+    }
+    
+    .tablet {
+        display: block;
+    }
+
+    /*----- Nav -----*/
+    #nav-bar {
+        width: 50%;
+    }
+
+    /*----- Main -----*/
+    .feature {
+        flex: 0 1 45%;
+        width: 45%;
+        margin-bottom: 8px;
+    }
+
+    .option {
+        margin-bottom: 8px;
+    }
+}
+
+/* Mobile Viewports */
+@media screen and (max-width: 570px) {
+    /* Show mobile elements, hide tablet/desktop elements */
+    .tablet, .desktop {
+        display: none;
+    }
+    
+    .mobile {
+        display: block;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    /*----- Nav -----*/
+    #nav-bar {
+        width: 100%;
+        justify-content: space-evenly;
+        margin-bottom: 16px
+    }
+
+    /*----- Main -----*/
+    #mail-form {
+        margin-top: 200px;
+    }
+
+    #features-list {
+        flex-direction: column;
+        justify-content: center;;
+    }
+
+    .feature, .option {
+        width: 80%;
+        max-width: 350px;
+        margin: 0 auto 8px auto;
+    }
+
+    .feature-name {
+        text-align: center;
+    }
+}

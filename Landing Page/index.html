@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <div id="wrapper">
+        <header id="header">
+            <div id="logo-name">
+                <img src="https://i.imgur.com/vW2VJrO.png" id="header-img" alt="TakenouchiTR logo">
+                <h1 class="desktop mobile">Himeji Map Viewer</h1>
+                <h1 class="tablet">HMV</h1>
+            </div>
+
+            <nav id="nav-bar">
+                <p><a class="nav-link" href="#features">Features</a></p>
+                <p><a class="nav-link" href="#options">Options</a></p>
+                <p><a class="nav-link" href="#report">Bug Report</a></p>
+            </nav>
+        </header>
+
+        <main>
+            <form action="https://www.freecodecamp.com/email-submit" id="form">
+                <label for="email">Sign up for the mailing list</label>
+                <input type="email" id="email" name="email" placeholder="name@domain.com">
+                <input type="submit" id="submit" value="Get Updates!">
+            </form>
+
+            <section id="features" class="page-section">
+                <h2>Features</h2>
+
+                <div id="features-list">
+                    <div class="feature">
+                        <h3 class="feature-name">Easily Customizable</h3>
+                        <p class="feature-desc">
+                            Himeji Map Viewer comes with a variety of options to quickly - and easily - customize your render.
+                            HMV Has four main <a href="#options">options</a>:
+                        </p>
+                        <ul>
+                            <li>Biome Colors</li>
+                            <li>Night Brightness</li>
+                            <li>Shadow Intensity</li>
+                            <li>Water Transparency</li>
+                        </ul>
+                        <p class="feature-desc">
+                            Each option can be customized in multiple ways, or be turne off entirely. Please see the next 
+                            section for details for each one.
+                        </p>
+                        <p class="feature-desc">
+                            Along with tweaking how the image will render, you can choose to render only a certain area of your map.
+                        </p>
+                    </div>
+
+                    <div class="feature">
+                        <h3 class="feature-name">Light Mod Support</h3>
+                        <p class="feature-desc">
+                            If a modded map is selected, Himeji Map Viewer will do its best to work around unknown blocks and biomes. 
+                            You can select torender unknown blocks in Magenta, or to skip them and render the first known block 
+                            below it. Biomes will be rendered using a default biome selected in the settings.
+                        </p>
+                        <p class="feature-desc">
+                            After rendering, HMV will alert you if any unknown blocks or biomes were found. You may choose to import
+                            these missing blocks and biomes so that you can assign colors to them. Biome names are not stored in the
+                            file, so HMV will tell you where to go in your world to find the biome name.
+                            </thead>
+                        </p>
+                        <p class="feature-desc">
+                            *Only modded maps from version 1.13 onwards will work properly.
+                        </p>
+                    </div>
+
+                    <div class="feature">
+                        <h3 class="feature-name">Version Compatibility</h3>
+                        <p class="feature-desc">
+                            Himeji Map Viewer supports all versions between Beta 1.3 and 1.16.1. HMV will be able to handle minor future
+                            updates that do not change how the world files are saved by allowing you to manually enter new blocks and
+                            biomes, reducing the need for constant updating as snapshots begin rolling out.
+                        </p>
+                        <p class="feature-desc">
+                            If there is an issue rendering a new version of Minecraft, please send a <a href="#report">report</a> so that the
+                            issue can be resolved as soon as possible.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="options" class="page-section">
+                <h2>Render Options</h2>
+
+                <div id="options-list">
+                    <div class="option">
+                        <h3 class="feature-name">Biome Colors</h3>
+                        <p class="feature-desc">
+                            Change what colors to tint grass, foliage, and water, along with how strong the tint should be.
+                        </p>
+                        <img src="https://i.imgur.com/SYd99pF.gif" class="feature-desc" alt="Example of biome colors">
+                    </div>
+
+                    <div class="option">
+                        <h3 class="feature-name">Night Brightness</h3>
+                        <p class="feature-desc">
+                            Adjust how dark nights will be. Light will scale between full brightness and the set darkness.
+                        </p>
+                        <img src="https://i.imgur.com/JBekjB1.gif" class="feature-desc" alt="Example of night brightness">
+                    </div>
+
+                    <div class="option">
+                        <h3 class="feature-name">Shadow Intensity</h3>
+                        <p class="feature-desc">
+                            Set how bright inclines will be and how dark declines will be. Settings can be locked to change together
+                        </p>
+                        <img src="https://i.imgur.com/tkDDjjN.gif" class="feature-desc" alt="Example of shadow intensity">
+                    </div>
+
+                    <div class="option">
+                        <h3 class="feature-name">Water Transparency</h3>
+                        <p class="feature-desc">
+                            Adjust how transparent water will be. Water can be made completely opaque to hide what is underneath it.
+                        </p>
+                        <img src="https://i.imgur.com/0lmmjIx.gif" class="feature-desc" alt="Example of water transparency">
+                    </div>
+                </div>
+            </section>
+
+            <section id="report">
+                <h3>Bug Reports</h3>
+                <form id="report-form">
+                    <label for="report-email">Email: </label>
+                    <input type="email" id="report-email" name="email">
+
+                    <label for="report-version">Map Version<span class="required">*</span>: </label>
+                    <input type="text" id="report-version" name="report-version">
+
+                    <label for="report-desc" class="block-label">Issue Description<span class="required">*</span>: </label>
+                    <textarea id="report-desc" name="report-desc" required></textarea>
+                    <input type="submit" id="report-submit">
+                </form>
+            </section>
+        </main>
+
+        <!-- 
+            I'm required to have an embedded video.
+            I don't have a video of this program, because there's not much to record. 
+            The gifs show everything I want to show.
+        -->
+        <iframe id="video"
+            src="https://www.youtube-nocookie.com/embed/y8Yv4pnO7qc?rel=0&amp;controls=0&amp;showinfo=0">
+        </iframe>
+    </div>
+</body>
+</html>
