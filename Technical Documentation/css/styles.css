@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*:not(code) {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*----- Nav -----*/
+
+header {
+    font-size: 1.5em;
+}
+
+h2 {
+    font-size: 1.3em;
+}
+
+li {
+    list-style-position: inside;
+    padding-left: 8px
+}
+
+#navbar {
+    height: 200px;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-bottom: 1px solid black;
+}
+
+#nav-header {
+    padding: 4px;
+}
+
+#navbar li {
+    list-style: none;
+    border-bottom: 1px solid black;
+    font-size: 1.2em;
+    padding: 4px 8px;
+}
+
+#navbar li:first-of-type {
+    border-top: 1px solid black;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: black;
+}
+
+/*----- Main -----*/
+.main-section {
+    margin-left: 8px;
+    margin-bottom: 48px;
+}
+
+.section-body {
+    margin-left: 16px;
+}
+
+.main-section p {
+    margin-top: 8px;
+}
+
+.list-header {
+    font-size: 1.3em;
+    margin-top: 16px;
+}
+
+code {
+    background-color: #cccccc;
+    border-radius: 4px;
+    padding: 0 4px;
+    font-size: 1.05em;
+}
+
+ol ol {
+    margin-left: 12px;
+    list-style-type: lower-alpha;
+    font-size: .95em;
+}
+
+dl {
+    margin-top: 8px;
+}
+
+dl li {
+    font-weight: bold;
+}
+
+dd {
+    margin-left: 48px;
+    margin-bottom: 6px;
+}
+
+.spaced-section {
+    margin-top: 8px;
+}
+
+/* Media Query for Tablets and Desktops */
+@media screen and (min-width: 600px) {
+    /*----- Nav -----*/
+    #navbar {
+        height: 100%;
+        width: 240px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        border-right: 1px solid black;
+    }
+
+    #navbar ul {
+        height: auto;
+    }
+
+    /*----- Main -----*/
+    #main-doc {
+        margin-top: 8px;
+        margin-left: 250px;
+    }
+}

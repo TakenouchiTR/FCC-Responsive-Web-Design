@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <nav id="navbar">
+        <header id="nav-header">HMV Documentation</header>
+        <ul>
+            <li><a class="nav-link" href="#introduction">Introduction</a></li>
+            <li><a class="nav-link" href="#requirements">Requirements</a></li>
+            <li><a class="nav-link" href="#quick_start">Quick Start</a></li>
+            <li><a class="nav-link" href="#the_settings_window">The Settings Window</a></li>
+            <li><a class="nav-link" href="#settings:_rendering_tab">Settings: Rendering Tab</a></li>
+            <li><a class="nav-link" href="#settings:_pop-ups_tab">Settings: Pop-ups Tab</a></li>
+            <li><a class="nav-link" href="#settings:_preferences_tab">Settings: Preferences Tab</a></li>
+            <li><a class="nav-link" href="#settings:_memory_tab">Settings: Memory Tab</a></li>
+            <li><a class="nav-link" href="#blocks">Blocks</a></li>
+            <li><a class="nav-link" href="#adding_blocks">Adding Blocks</a></li>
+            <li><a class="nav-link" href="#block_flags">Block Flags</a></li>
+            <li><a class="nav-link" href="#biomes">Biomes</a></li>
+            <li><a class="nav-link" href="#adding_biomes">Adding Biomes</a></li>
+            <li><a class="nav-link" href="#bounds_window">Bounds Window</a></li>
+        </ul>
+    </nav>
+
+    <div id="wrapper">
+        <main id="main-doc">
+            <section class="main-section" id="introduction">
+                <header>Introduction</header>
+                <div class="section-body">
+                    <p>
+                        To do...
+                    </p>
+                </div>
+            </section>
+
+            <section class="main-section" id="requirements">
+                <header>Requirements</header>
+                <div class="section-body">
+                    <p>
+                        In order to use Himeji Map Viewer, you must have Java 8 or newer installed on your computer. Many users 
+                        who have been playing Minecraft for a long time may have it installed already, but newer users
+                        may not have had to download it in order to play. Since early 2015, Minecraft no longer required Java
+                        to be installed in order to play.
+                    </p>
+                    <p>to check if your computer has the correct version of java installed, follow the following steps for your OS:</p>
+
+                    <h2 class="list-header">Windows</h2>
+                    <div class="section-body">
+                        <ol>
+                            <li>Open the start menu by pressing the Windows key</li>
+                            <li>Type "<code>cmd</code>" to search for the Command Prompt, then select it</li>
+                            <li>Type "<code>java -version</code>" into the Command Prompt to get info on your version of Java</li>
+                        </ol>
+                        <p>
+                            If the output says "<code>java version "1.8.x"</code>" or higher, then you will be able to use HMV. However, 
+                            if your output says "<code>java version "1.7.x"</code>" or lower, or if the command isn't recognized, 
+                            please install the latest Java version.
+                        </p>
+                    </div>
+
+                    <h2 class="list-header">Mac</h2>
+                    <div class="section-body">
+                        <ol>
+                            <li>Press the Mac icon in the top-left corner of the screen</li>
+                            <li>Select "System Preferences..."</li>
+                            <li>Select "Java" from the preferences screen</li>
+                            <li>Select the "Update" tab at the top of the Java screen</li>
+                            <li>Check the version of Java written on the Update tab</li>
+                        </ol>
+                        <p>
+                            If your Java version says "Java 8 Update x" or higher, then you will be able to use HMV. However, 
+                            if your Java version says "Java 7 Update x" or lower, or if the Java option isn't in the System 
+                            Preferences window, please install the latest Java version.
+                        </p>
+                    </div>
+
+                    <h2 class="list-header">Linux</h2>
+                    <div class="section-body">
+                        <p>
+                            <code>To do...</code>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="main-section" id="quick_start">
+                <header>Quick Start</header>
+                <div class="section-body">
+                    <p>
+                        This section will go over the steps for rendering a map without changing any settings. These
+                        instructions only cover Windows usage, as I don't have experience using Mac or Linux computers.
+                    </p>
+                    <ol class="spaced-section">
+                        <li>Download HMV.jar from the GitHub repo.</li>
+                        <li>Place HMV.jar in your desired folder. HMV will generate files in that folder.</li>
+                        <li>Double click HMV.jar to run it.</li>
+                        <li>Click the "World" button to bring up a folder select window and select your world.</li>
+                        <ol>
+                            <li>If your world is not in the default saves folder, navigate to the world folder.</li>
+                            <li>Click the folder with the name of your world.</li>
+                            <li>Click "Open" at the bottom of the window.</li>
+                        </ol>
+                        <li>Click the "Output" button to bring up a file select window and choose where to save the image.</li>
+                        <ol>
+                            <li>Navigate to where you want to save your map images.</li>
+                            <li>Type the name of the image in the "File Name" box.</li>
+                            <li>Press "Save" at the bottom of the window.</li>
+                        </ol>
+                        <li>Press the "Start" button at the bottom-right of the window to start rendering.</li>
+                        <li>When the program is finished, there will be a message at the bottom of the window.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="main-section" id="the_settings_window">
+                <header>The Settings Window</header>
+                <div class="section-body">
+                    <p>
+                        The settings window is made up of four tabs: Rendering, Pop-ups, Preferences, and Memory. To get more 
+                        information on a specific tab, please go to its section below.
+                    </p>
+
+                    <p>
+                        Changes made in the Settings window are not automatically saved. To save any changes, either press the 
+                        "Save" or the "Apply" button at the bottom. "Apply" will save the changes, but keep the window open. "Save"
+                        will save the changes and close the window.
+                    </p>
+
+                    <p>
+                        Pressing the "Default" button will reset the values of the current tab to their default settings. The 
+                        changes will not be saved until either the "Save" or "Apply" buttons are pressed. If the "Default" button
+                        was pressed by mistake, you can close out of the window without saving to undo the change.
+                    </p>
+                </div>
+            </section>
+
+            <section class="main-section" id="settings:_rendering_tab">
+                <header>Settings: Rendering Tab</header>
+                <div class="section-body">
+                    <p>
+                        The Rendering tab contains four main settings for how the map will be rendered, along with options
+                        for handling missing biomes and blocks.
+                    </p>
+
+                    <h2 class="spaced-section">Render at Night</h2>
+                    <div class="section-body">
+                        <p>
+                            This option allows you to choose whether or not to take a block's brightness into account when rendering
+                            the map. Turning it off will make every block draw at max brightness - including blocks that are 
+                            underground.
+                        </p>
+                        <p>
+                            The "Night Brightness" slider allows you to set how dark to make blocks that aren't lit at all, with 0% 
+                            being pitch black and 100% effective turning the option off.
+                        </p>
+                    </div>
+
+                    <h2 class="spaced-section">Render Biome Colors</h2>
+                    <div class="section-body">
+                        <p>
+                            This option toggles whether certain blocks will be affected by the biome they are in. The block's base color 
+                            is blended with the biome's color for the block's category. Blocks that are affected by biomes are broken into 
+                            three categories: Grass, Foliage, and Water. For more information, view the "Block Flags" section below.
+                        </p>
+                        <p>
+                            The "Biome Intensity" slider allows you to adjust how much blocks are discolored by their biome. At 0%, there 
+                            is effectively no change in color. At 100%, the block's color will be entirely changed to the biome color.
+                        </p>
+                    </div>
+
+                    <h2 class="spaced-section">Render Blocks Underwater</h2>
+                    <div class="section-body">
+                        <p>
+                            This option toggles whether blocks that are located under water will be rendered or not. When turned off, 
+                            water will appear completely opaque and hide whatever is underneathe it. When turned on, the color of the
+                            block under the water block will be blended with the water's color.
+                        </p>
+                        <p>
+                            The "Water Transparency" slider will affect how much the water's color will blend with the block underneathe
+                            it. At 100%, the water will be entirely invisible, rendering as if there was no water at all. At 0%, the
+                            water's color will completely overtake the block's color, effectively making the water opaque.
+                        </p>
+                        <p>
+                            Please not that the slider being at 0% does NOT make the water opaque. Blocks will still be affected by the
+                            shading and highlighting option covered in the next section.
+                        </p>
+                    </div>
+
+                    <h2 class="spaced-section">Render Shadows/Highlights</h2>
+                    <div class="section-body">
+                        <p>
+                            This option toggles whether blocks will either be shaded or highlighted based on their elevation
+                            in relation to the blocks around them. Blocks that are higher will be highlighted, while blocks that
+                            are lower will be shaded.
+                        </p>
+                        <p>
+                            The "Shadow Intensity" slider will affect how dark blocks will become when shading is applied. The lower
+                            the value, the darker the shading will be. At 0%, there will be no shading applied. At 100%, the 
+                            block will become pitch black.
+                        </p>
+                        <p>
+                            The "Highlight Intensity" slider will affect how bright blocks will become when highlighting is applied. 
+                            The higher the value, the brighter the highlighting will be. At 0%, the block will not be highlighted. At
+                            100%, the block will approach completely white.
+                        </p>
+                        <p>
+                            The "Lock shadow/highlight sliders" checkbox will lock the two sliders together. Moving one slider will
+                            set the other slider to the same value.
+                        </p>
+                        <p>
+                            It's important to note that blocks underwater will still have shading and highlighting applied to them
+                            as long as the "Render Blocks Underwater" option is checked. This includes when the "Water Transparency"
+                            slider is set to 0%.
+                        </p>
+                    </div>
+
+                    <h2 class="spaced-section">Default Options</h2>
+                    <div class="section-body">
+                        <p>
+                            In the case of missing blocks and biomes, a default action will be taken. Missing biomes will apply the
+                            default biome's color to applicable blocks. Missing blocks will be handled in one of two ways: Being
+                            colored Magenta, or being completely ignored and having the first block underneathe drawn.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="main-section" id="settings:_pop-ups_tab">
+                <header>Settings: Pop-ups Tab</header>
+                <div class="section-body">
+                    <p>
+                        The Pop-ups tab contains a handful of options for enabling and disabling various pop-ups:
+                    </p>
+
+                    <dl>
+                        <li>Show save block file confirmation</li>
+                        <dd>Show a confirmation when saving the block list to file.</dd>
+                        <li>Show remove block ID confirmation</li>
+                        <dd>Show a confirmation whenever removing a block ID.</dd>
+                        <li>Show missing block ID warning</li>
+                        <dd>Show a warning dialog whenever a missing block ID is found.</dd>
+                        <li>Show save biome file confirmation</li>
+                        <dd>Show a confirmation when saving the biome list to file.</dd>
+                        <li>Show remove biome ID confirmation</li>
+                        <dd>Show a confirmation whenever removing a biome ID.</dd>
+                        <li>Show missing biome ID warning</li>
+                        <dd>Show a warning dialog whenever a missing biome ID is found.</dd>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="main-section" id="settings:_preferences_tab">
+                <header>Settings: Preferences Tab</header>
+                <div class="section-body">
+                    <p>
+                        The Preferences tab has a few options for customizing your experience with the program. You can
+                        select the default folder to open when selecting a world, selecting an output file, and whether or
+                        not you want something to happen when finishing a render.
+                    </p>
+
+                    <h2 class="spaced-section">Default Folders</h2>
+                    <div class="section-body">
+                        <p>
+                            There are very similar options for selecting the default folder for selecting a world and choosing
+                            an output file:
+                        </p>
+                        <ul class="spaced-section">
+                            <li>Open straight to the last folder used.</li>
+                            <li>Open the default Minecraft directory.</li>
+                            <li>Select a specific folder to open everytime.</li>
+                        </ul>
+                        <p>
+                            When choosing the last option, a button and textbox will become enabled. Press the button to bring
+                            up a folder selector. Navigate to your desired default folder, then press "Open" at the bottom to
+                            select it.
+                        </p>
+                    </div>
+
+                    <h2 class="spaced-section">Render Finish Action</h2>
+                    <div class="section-body">
+                        <p>
+                            There are a handful of actions that can happen after a rander is completed:
+                        </p>
+                        <dl>
+                            <li>Dont open images automatically after rendering</li>
+                            <dd>No action will be taken; the program will only show a completion message at the bottom</dd>
+                            <li>Ask to open images after rendering</li>
+                            <dd>A dialog will appear and give the option to open the image.</dd>
+                            <li>Always open images after rendering</li>
+                            <dd>Images will automatically open after rendering has finished.</dd>
+                            <li>Ask to open the image's folder after rendering</li>
+                            <dd>A dialog will appear and give the option to open the folder containing the image.</dd>
+                            <li>Always open the image's folder after rendering</li>
+                            <dd>The folder the image is in will automatically open after rendering has finished.</dd>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="main-section" id="settings:_memory_tab">
+                <header>Settings: Memory Tab</header>
+                <div class="section-body">
+                    <p>The Memory tab has two options for managing memory and performance.</p>
+
+                    <h2 class="spaced-section">Max Threads</h2>
+                    <div class="section-body">
+                        <p>
+                            This slider controls the maximum number of threads allowed to run at once. The higher the thread count, 
+                            the faster the render, but will also use more system resources such as RAM and CPU time.
+                        </p>
+                    </div>
+
+                    <h2 class="spaced-section">Max Image Size</h2>
+                    <div class="section-body">
+                        <p>
+                            This slider limits the size of the image to prevent overly large images from crashing the program. While
+                            being rendered, the image is not being compressed - that is to say that the image in memory will not be
+                            the same size as the output. Each pixel represents a block and is 4 bytes in size. One chunk equates to 
+                            one kB, and one region file equates to one MB.
+                        </p>
+                        <p>
+                            There are not many cases where the image for a normal world will go above one GB. Keep in mind that
+                            the map shows ungenerated chunks as black, which still takes up memory. By traveling long distances 
+                            in the nether, the overworld may have many "islands" of generation that greatly increase the render size.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="main-section" id="blocks">
+                <header>Blocks</header>
+                <div class="section-body">
+                    <p>
+                        Blocks can be edited by opening the Color Editor window under Config>Block Colors. From this window, you can
+                        select a block ID from the dropdown list. Selecting an ID will fill in the color fields on the left side of
+                        the page. When the fields change, the preview panel on the right side of teh page will update to display the
+                        color.
+                    </p>
+                    <p>
+                        Colors can be edited by either entering a hex code into the "Hex" textbox, or by adjusting each of the three
+                        RGB boxes individually. When you are pleased with the new color, press the "Accept" button to confirm the change.
+                        Changes are ONLY saved for the session, unless the "Save" button is pressed. Pressing the "Save" button will
+                        permanently save all changes to file.
+                    </p>
+                    <p>
+                        Pressing the "Remove" button will remove a block ID from the list for the rest of the session. A dialog 
+                        will appear asking for confirmation for the action, which can be disabled in the Settings window. If the 
+                        "Save" button is pressed after an ID has been removed, the removal will be saved to file.
+                    </p>
+                </div>
+            </section>
+
+            <section class="main-section" id="adding_blocks">
+                <header>Adding Blocks</header>
+                <div class="section-body">
+                    <p>
+                        To add a new block ID, open the "New Block ID" window by going to Add>New Block ID. Type in the ID for the new
+                        block in the ID textbox, then press "Add" to add it to the list. If the ID already exists, a warning will
+                        appear and the ID will not be added.
+                    </p>
+                    <p>
+                        Please note that this feature is bare bones and still being worked on.
+                    </p>
+                </div>
+            </section>
+
+            <section class="main-section" id="block_flags">
+                <header>Block Flags</header>
+                <div class="section-body">
+                    <p>
+                        Blocks can be assigned to a flag to affect how it is rendered:
+                    </p>
+                    <ul>
+                        <li>Invisible: Blocks will not be drawn</li>
+                        <li>Grass: Blocks will be affected by a biome's grass color</li>
+                        <li>Foliage: Blocks will be affected by a biome's foliage color</li>
+                        <li>Water: Blocks will be affected by a biome's water color</li>
+                    </ul>
+                    <p>
+                        To edit the list of blocks assigned to a certain flag, select the flag from the list on the bottom-left. 
+                        Selecting a flag will change the list in the top to display all blocks that are assigned to that flag.
+                        Click a block from the list, then press the "Remove" button to remove it from that flag. To add a block
+                        to the flag, select its ID from the drop down list then press the "Add" button.
+                    </p>
+                    <p>
+                        Additions and removals will be applied to the current session automatically, and will be reset when the 
+                        program is closed. To save the changes permanently, press the "Save to File" button.
+                    </p>
+                </div>
+            </section>
+
+            <section class="main-section" id="biomes">
+                <header>Biomes</header>
+                <div class="section-body">
+                    <p>
+                        To do...
+                    </p>
+                </div>
+            </section>
+
+            <section class="main-section" id="adding_biomes">
+                <header>Adding Biomes</header>
+                <div class="section-body">
+                    <p>
+                        To do...
+                    </p>
+                </div>
+            </section>
+
+            <section class="main-section" id="bounds_window">
+                <header>Bounds Window</header>
+                <div class="section-body">
+                    <p>
+                        To do...
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
