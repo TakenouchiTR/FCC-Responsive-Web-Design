@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: tahoma, sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --heading-height: 75px;
+    --project-width: 325px;
+    --back-color: #333;
+}
+
+/*----- Top bar -----*/
+
+#page-heading {
+    position: fixed;
+    height: var(--heading-height);
+    background-color: white;
+    border-bottom: 2px solid black;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/*----- Header -----*/
+header {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: start;
+    width: fit-content;
+    height: 100%;
+}
+
+#logo {
+    height: 98%;
+    padding: 1%;
+}
+
+#title {
+    height: fit-content;
+    margin: auto 0;
+}
+
+/*----- Nav -----*/
+#navbar {
+    width: 50%;
+}
+
+#nav-list {
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+#nav-list li {
+    list-style-type: none;
+    width: 125px;
+    text-align: center;
+    margin: auto;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: white;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    transition: .5s;
+}
+
+#nav-list a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: black;
+    text-decoration: none;
+    transition: .5s;
+}
+
+#nav-list li:hover {
+    background-color: black;
+}
+
+#nav-list li:hover a {
+    color: white;
+}
+
+/*----- Main -----*/
+
+/*-- Welcome --*/
+#welcome-section {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--back-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#welcome-section h1 {
+    color: white;
+    opacity: 0;
+    font-size: 4.5em;
+    animation: fade-in;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+#welcome-section h2 {
+    color: white;
+    opacity: 0;
+    font-size: 2.5em;
+    animation: fade-in;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
+
+@keyframes fade-in {
+    100% {
+        opacity: 1;
+    }
+}
+
+/*-- Projects --*/
+#projects {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+}
+
+#projects h2 {
+    margin: 0 auto 100px auto;
+    padding-top: 100px;
+    display: block;
+    text-align: center;
+    font-size: 2em;
+    width: 50%;
+    padding-bottom: 8px;
+    border-bottom: 1px solid black;
+}
+
+#projects a {
+    text-decoration: none;
+}
+
+#project-list {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project-tile {
+    display: flex;
+    margin: 0 0 40px 0;
+    text-align: center;
+    flex-direction: column;
+    width: var(--project-width);
+    background-color: var(--back-color);
+    color: white;
+}
+
+.project-title {
+    font-size: 1.7em;
+    padding: 6px 0;
+}
+
+.project-preview {
+    width: var(--project-width);
+    height: var(--project-width);
+    padding: 0 4px;
+}
+
+.language {
+    font-size: 1.25em;
+    padding: 4px 0;
+}
+
+/*----- Contact -----*/
+#contact {
+    padding: 64px 0 128px 0;
+    background: var(--back-color);
+}
+
+#contact h2 {
+    font-size: 2em;
+    text-align: center;
+    margin: 0 auto;
+    color: white;
+    width: 50%;
+    padding-bottom: 8px;
+    border-bottom: 1px solid white;
+}
+
+#link-section {
+    width: 50%;
+    margin: 32px auto 0 auto;
+}
+
+#links {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#links a {
+    text-decoration: none;
+    display: grid;
+    position: relative;
+    text-align: center;
+    height: 100px;
+    width: 200px;
+    transition: .5s;
+}
+
+#links a:hover {
+    font-size: 1.25em;
+}
+
+#links p {
+    margin: auto auto;
+    font-size: 1.5em;
+    color: white;
+}
+
+.link-background {
+    position: absolute;
+    opacity: 0;
+    width: 200px;
+    height: 100px;
+    top: 0;
+    transition: .5s;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+}
+
+.link-background:hover {
+    opacity: .3;
+}
+
+#github-bg {
+    background-image: url("https://i.imgur.com/q58vX8x.png");
+}
+
+#linkedin-bg {
+    background-image: url("https://i.imgur.com/O3YucVb.png");
+}
+
+#email-bg {
+    background-image: url("https://i.imgur.com/vpNg5qx.png");
+}
+
+/* Media Query for tablets */
+@media screen and (max-width: 750px) {
+
+    #title {
+        display: none;
+    }
+
+    #logo {
+        margin-left: 16px;
+    }
+
+    #navbar {
+        width: 80%;
+    }
+
+    .project {
+        width: 250px;
+        background-color: white;
+    }
+}
