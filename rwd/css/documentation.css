@@ -8,13 +8,17 @@
     font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 
+:root {
+    --nav-width: 265px;
+}
+
 /*----- Nav -----*/
 
-header {
+header, h2 {
     font-size: 1.5em;
 }
 
-h2 {
+h3 {
     font-size: 1.3em;
 }
 
@@ -49,6 +53,10 @@ li {
 #navbar a {
     text-decoration: none;
     color: black;
+}
+
+.sub-header {
+    padding-left: 10px;
 }
 
 /*----- Main -----*/
@@ -87,7 +95,7 @@ dl {
     margin-top: 8px;
 }
 
-dl li {
+dt {
     font-weight: bold;
 }
 
@@ -105,7 +113,7 @@ dd {
     /*----- Nav -----*/
     #navbar {
         height: 100%;
-        width: 240px;
+        width: var(--nav-width);
         position: fixed;
         top: 0;
         left: 0;
@@ -119,6 +127,7 @@ dd {
     /*----- Main -----*/
     #main-doc {
         margin-top: 8px;
-        margin-left: 250px;
+        margin-left: var(--nav-width);
+        padding-left: 16px;
     }
 }
