@@ -8,13 +8,15 @@
 
 :root {
     --heading-height: 75px;
-    --project-width: 325px;
+    --project-size: 325px;
+    --project-size-small: 250px;
     --back-color: #333;
 }
 
 /*----- Top bar -----*/
 
 #page-heading {
+    z-index: 1;
     position: fixed;
     height: var(--heading-height);
     background-color: white;
@@ -101,7 +103,7 @@ header {
     text-align: center;
 }
 
-#welcome-section h1 {
+#welcome-line-1 {
     color: white;
     opacity: 0;
     font-size: 4.5em;
@@ -110,7 +112,7 @@ header {
     animation-fill-mode: forwards;
 }
 
-#welcome-section h2 {
+#welcome-line-2 {
     color: white;
     opacity: 0;
     font-size: 2.5em;
@@ -139,7 +141,8 @@ header {
     display: block;
     text-align: center;
     font-size: 2em;
-    width: 50%;
+    width: 90%;
+    max-width: 600px;
     padding-bottom: 8px;
     border-bottom: 1px solid black;
 }
@@ -161,19 +164,19 @@ header {
     margin: 0 0 40px 0;
     text-align: center;
     flex-direction: column;
-    width: var(--project-width);
+    width: var(--project-size);
     background-color: var(--back-color);
     color: white;
 }
 
 .project-title {
-    font-size: 1.7em;
+    font-size: 1.55em;
     padding: 6px 0;
 }
 
 .project-preview {
-    width: var(--project-width);
-    height: var(--project-width);
+    width: var(--project-size);
+    height: var(--project-size);
     padding: 0 4px;
 }
 
@@ -199,7 +202,7 @@ header {
 }
 
 #link-section {
-    width: 50%;
+    width: 80%;
     margin: 32px auto 0 auto;
 }
 
@@ -208,6 +211,7 @@ header {
     display: inline-flex;
     flex-direction: row;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 #links a {
@@ -259,7 +263,7 @@ header {
 }
 
 /* Media Query for tablets */
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 810px) {
 
     #title {
         display: none;
@@ -273,8 +277,41 @@ header {
         width: 80%;
     }
 
-    .project {
-        width: 250px;
-        background-color: white;
+    #nav-list li {
+        width: 100px;
+        font-size: 1.2em;
+    }
+
+    .project-preview {
+        width: var(--project-size-small);
+        height: var(--project-size-small);
+    }
+    .project-tile {
+        width: var(--project-size-small);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #page-heading {
+        flex-direction: column;
+        justify-content: start;
+        height: 110px;
+    }
+
+    header {
+        margin: 0 auto;
+        height: var(--heading-height);
+    }
+
+    #title {
+        display: block;
+    }
+
+    #logo {
+        height: var(--heading-height);
+    }
+
+    #navbar {
+        margin: 0 auto;
     }
 }
