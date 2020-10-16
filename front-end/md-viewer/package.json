@@ -2,7 +2,7 @@
   "name": "quotes",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://takenouchitr.github.io/fcc-web-development-projects",
+  "homepage": "http://takenouchitr.github.io/fcc-web-development-Projects/front-end/md-viewer",
   "dependencies": {
     "-": "0.0.1",
     "@testing-library/jest-dom": "^4.2.4",
