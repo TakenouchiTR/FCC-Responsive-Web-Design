@@ -40,6 +40,8 @@ h1 {
 #img-caption {
     margin-top: 5px;
     font-size: 1.5em;
+    width: 100%;
+    text-align: center;
 }
 
 #image {
