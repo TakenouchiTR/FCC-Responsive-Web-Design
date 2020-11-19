@@ -10,7 +10,7 @@
     place-items: center;
     width: 100vw;
     height: 100vh;
-    background-color: rgb(241, 224, 192);
+    background-color:rgb(174, 243, 174);
 }
 
 #content {
@@ -57,21 +57,24 @@
 
 .clean {
     background-color: green;
+    border-color: darkgreen;
 }
 
 .dope {
     background-color: red;
+    stroke-width: 1px;
+    stroke: darkred;
 }
 
 #tooltip {
     position: absolute;
     user-select: none;
-    background-color: wheat;
+    background-color:rgb(252, 165, 165);
     padding: 8px;
+    border: 1px solid limegreen;
     border-radius: 6px;
     width: 200px;
     height: auto;
-    border-radius: 60px;
-    box-shadow: 0 0 40px 40px wheat ;
+    border-radius: 8px;
     font-size: .75em;
 }

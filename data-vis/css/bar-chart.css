@@ -10,7 +10,7 @@
     place-items: center;
     width: 100vw;
     height: 100vh;
-    background-color: rgb(241, 224, 192);
+    background-color: skyblue;
 }
 
 #content {
@@ -26,6 +26,13 @@
     text-align: center;
 }
 
+#subtitle {
+    text-align: center;
+}
+
+.bar {
+    fill: rgb(34, 54, 112);
+}
 
 .bar:hover {
     fill: rgb(150, 150, 204);
@@ -35,11 +42,11 @@
     position: absolute;
     left: 150px;
     top: 150px;
-    background-color: wheat;
+    background-color: skyblue;
+    border: 1px solid royalblue;
     padding: 8px;
     border-radius: 6px;
     width: 150px;
     text-align: center;
-    border-radius: 60px;
-    box-shadow: 0 0 40px 40px wheat ;
+    border-radius: 8px;
 }

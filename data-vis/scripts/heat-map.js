@@ -1,5 +1,5 @@
 const url = "https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/global-temperature.json";
-let months = [
+const MONTHS = [
     "January",
     "February",
     "March",
@@ -14,7 +14,7 @@ let months = [
     "December"
 ]
 
-let colorTemps = [
+const CELL_COLORS = [
     [1, ""],
     [2.5, "#0276FE"],
     [4, "#2CACFF"],
@@ -23,6 +23,17 @@ let colorTemps = [
     [8.5, "#FFFF09"],
     [10, "#FFB200"],
     [11.5, "#FE4300"]
+]
+
+const TOOLTIP_COLORS = [
+    [1, ""],
+    [2.5, "#55CCFF"],
+    [4, "#55DDFF"],
+    [5.5, "#AAF0FF"],
+    [7, "#FFFFBB"],
+    [8.5, "#FFFF55"],
+    [10, "#FFDD33"],
+    [11.5, "#FEAA66"]
 ]
 
 let req = fetch(url)
@@ -40,7 +51,7 @@ let req = fetch(url)
         const chartWidth = width - paddingLeft - paddingRight;
         const chartHeight = height - paddingTop - paddingBottom;
 
-        const legendWidth = 50 * colorTemps.length;
+        const legendWidth = 50 * CELL_COLORS.length;
 
         //Calculates the size of each cell
         const cellWidth = chartWidth / (data.length / 12);
@@ -67,13 +78,13 @@ let req = fetch(url)
             .domain([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
             .range([height - paddingBottom, paddingTop]);
         const legendScale = d3.scaleBand()
-            .domain(colorTemps.map(item => item[0]))
+            .domain(CELL_COLORS.map(item => item[0]))
             .range([paddingLeft + chartWidth / 2 - legendWidth / 2, 
                     paddingLeft + chartWidth / 2 + legendWidth / 2]);
 
         const xAxis = d3.axisBottom(xScale);
         const yAxis = d3.axisLeft(yScale)
-            .tickFormat(month => months[month])
+            .tickFormat(month => MONTHS[month])
         const legendAxis = d3.axisBottom(legendScale)
             .tickFormat(temp => temp + "°C")
 
@@ -119,12 +130,13 @@ let req = fetch(url)
                     .style("opacity", 0.9)
 
                 toolTip.html(
-                    `<p>${months[month - 1]}, ${year}<br>
+                    `<p>${MONTHS[month - 1]}, ${year}<br>
                     ${temp}°C</p>`
                   )
                   .attr("data-year", year)
                   .style("left", e.layerX - 75 + "px")
-                  .style("top", e.layerY - 75 + "px");
+                  .style("top", e.layerY - 75 + "px")
+                  .style("background-color", getToolTipColor(temp))
               })
             .on("mouseout", () => {
                 toolTip.transition()
@@ -144,7 +156,7 @@ let req = fetch(url)
             .call(legendAxis);
 
         legendCanvas.selectAll(".key")
-            .data(colorTemps)
+            .data(CELL_COLORS)
             .enter()
             .append("rect")
             .attr("x", d => legendScale(d[0]) - 25)
@@ -157,10 +169,19 @@ let req = fetch(url)
     })
 
 function getCellColor(temp) {
-    for (let i = 1; i < colorTemps.length - 1; i++) {
-        if (temp < colorTemps[i][0])
-            return colorTemps[i][1];
+    for (let i = 1; i < CELL_COLORS.length - 1; i++) {
+        if (temp < CELL_COLORS[i][0])
+            return CELL_COLORS[i][1];
     }
 
-    return colorTemps[colorTemps.length - 1][1];
+    return CELL_COLORS[CELL_COLORS.length - 1][1];
+}
+
+function getToolTipColor(temp) {
+    for (let i = 1; i < TOOLTIP_COLORS.length - 1; i++) {
+        if (temp < TOOLTIP_COLORS[i][0])
+            return TOOLTIP_COLORS[i][1];
+    }
+
+    return TOOLTIP_COLORS[TOOLTIP_COLORS.length - 1][1];
 }

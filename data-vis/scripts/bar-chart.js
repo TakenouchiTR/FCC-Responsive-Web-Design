@@ -5,10 +5,10 @@ let req = fetch(url)
     .then(json => {
 
         const data = json.data;
-        const width = 700;
+        const width = 730;
         const height = 400;
         const padding = 30;
-        const barWidth = (width - padding * 2) / data.length;
+        const barWidth = (width - padding * 2 - 20) / data.length;
         const canvas = d3.select("#content")
                          .append("svg")
                          .attr("height", height)
@@ -22,7 +22,7 @@ let req = fetch(url)
         ///////////////////////////////   ////////////////////   //////////////////////////
         const xScale = d3.scaleTime()
             .domain([minYear, maxYear])
-            .range([padding * 1.5, width - padding]);
+            .range([padding * 1.5 + 30, width - padding]);
         const yScale = d3.scaleLinear()
             .domain([minGDP, maxGDP])
             .range([height - padding, padding]);
@@ -62,9 +62,13 @@ let req = fetch(url)
             .attr("id", "x-axis")
             .call(xAxis);
         canvas.append("g")
-            .attr("transform", `translate(${padding * 1.5}, 0)`)
+            .attr("transform", `translate(${padding * 1.5 + 30}, 0)`)
             .attr("id", "y-axis")
             .call(yAxis);
 
-        
+        canvas.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", "20px")
+            .attr("x", "-325px")
+            .text("Gross Domestic Product (in Billions)")
     })

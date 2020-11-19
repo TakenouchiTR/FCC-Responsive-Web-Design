@@ -1,5 +1,27 @@
 const url = "https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/video-game-sales-data.json";
 
+let colorIndex = 0;
+const COLOR_ARR = [
+    "rgb(107, 234, 232)",
+    "rgb(250, 127, 102)",
+    "rgb(69, 172, 35)",
+    "rgb(201, 214, 14)",
+    "rgb(226, 139, 188)",
+    "rgb(39, 147, 225)",
+    "rgb(233, 198, 189)",
+    "rgb(32, 139, 153)",
+    "rgb(191, 154, 88)",
+    "rgb(167, 165, 142)",
+    "rgb(24, 219, 153)",
+    "rgb(198, 57, 214)",
+    "rgb(52, 151, 18)",
+    "rgb(133, 126, 167)",
+    "rgb(250, 200, 148)",
+    "rgb(50, 186, 254)",
+    "rgb(228, 165, 13)",
+    "rgb(245, 66, 121)"
+]
+
 fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -8,8 +30,8 @@ fetch(url)
 
 const run = (data) => {
     let colors = {};
-    const width = 720;
-    const height = 500;
+    const width = 920;
+    const height = 600;
     const padding = {
         top: 15,
         right: 0,
@@ -34,13 +56,14 @@ const run = (data) => {
 
     let leaves = root.leaves()
 
-    canvas.selectAll("rect")
+    let boxes = canvas.selectAll("g")
         .data(leaves)
         .enter()
-        .append("rect")
+        .append("g")
+        .attr('transform', d => 'translate(' + d.x0 + ',' + d.y0 + ')');
+
+    boxes.append("rect")
         .attr("class", "tile")
-        .attr("x", d => d.x0 + padding.left)
-        .attr("y", d => d.y0 + padding.top)
         .attr("width", d => d.x1 - d.x0)
         .attr("height", d => d.y1 - d.y0)
         .attr("data-name", d => d.data.name)
@@ -55,7 +78,7 @@ const run = (data) => {
             let category = d.data.category;
             let value = d.data.value;
             toolTip.html(
-                `<p>Name: ${name}<br>Category: ${category}<br>Value: ${value}</p>`
+                `<p>Name: ${name}<br>Platform: ${category}<br>Units Sold: ${value} Million</p>`
                 )
                 .attr("data-value", value)
                 .style("left", e.layerX + 20 + "px")
@@ -65,25 +88,22 @@ const run = (data) => {
             toolTip.style("display", "none")
         });
 
-    canvas.selectAll("text")
-        .data(leaves)
+    boxes
+        .append('text')
+        .attr('class', 'tile-text')
+        .selectAll('tspan')
+        .data(d => {
+          return d.data.name.split(/(?=[A-Z][^A-Z])/g);
+        })
         .enter()
-        .append("text")
-        .attr("x", d => d.x0)
-        .attr("y", d => d.y0 + 25)
-        .style("font-size", "13px")
-        .attr("class", "cell-label")
-        .text(d => d.data.name)
+        .append('tspan')
+        .attr('x', 4)
+        .attr('y', function (d, i) {
+          return 13 + i * 10;
+        })
+        .style("font-size", "10px")
+        .text(d => d);
 
-    /*
-    const labels = document.getElementsByClassName("cell-label");
-    console.log(leaves)
-    for (let i = 0; i < labels.length; i++) {
-        const words = leaves[i].data.name.split(" ");
-        for (let word of words)
-            labels[i].innerHTML += `<tspan x="0" dy="1.25em">${word}</tspan>`
-    }*/
-    
     const legend = d3.select("#legend")
         .attr("width", width)
         .attr("height", 100)
@@ -119,9 +139,6 @@ function getColor(colors, category) {
     if (colors.hasOwnProperty(category))
         return colors[category];
 
-    let r = Math.floor(Math.random() * 256);
-    let g = Math.floor(Math.random() * 256);
-    let b = Math.floor(Math.random() * 256);
-    colors[category] = `rgb(${r}, ${g}, ${b})`
+    colors[category] = COLOR_ARR[colorIndex++]
     return colors[category];
 }

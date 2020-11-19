@@ -9,8 +9,12 @@
     display: grid;
     place-items: center;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-color: rgb(241, 224, 192);
+}
+
+#description {
+    margin-bottom: 16px;
 }
 
 #content {

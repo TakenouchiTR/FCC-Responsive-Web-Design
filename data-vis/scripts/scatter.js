@@ -51,6 +51,8 @@ let req = fetch(url)
             .attr("id", "tooltip")
             .style("opacity", 0);
 
+        let yOffset = 25;
+
         canvas.selectAll("svg")
             .data(data)
             .enter()
@@ -60,9 +62,12 @@ let req = fetch(url)
             .attr("r", r)
             .attr("class", "dot")
             .attr("fill", d => d.Doping === "" ? "green" : "red")
+            .attr("stroke", d => d.Doping === "" ? "darkgreen" : "darkred")
+            .attr("stroke-width", "2px")
             .attr("data-xvalue", (d, i) => years[i])
             .attr("data-yvalue", (d, i) => times[i])
             .on("mouseover", (e, d) => {
+                yOffset = d.Doping ? 50 : 25;
                 const pos = Number(d.Place) - 1;
                 toolTip.transition().duration(1).style("display", "block");
                 toolTip.transition().duration(50).style("opacity", 0.9);
@@ -71,21 +76,20 @@ let req = fetch(url)
                     Year: ${d.Year} - Time: ${times[pos].getMinutes()}:${times[pos].getSeconds()}${d.Doping !== "" ? `<br><br>${d.Doping}` : ""}`
                   )
                   .attr("data-year", years[pos])
-                  .style("left", () => {
-                    let x = e.srcElement.cx.baseVal.value + 30;
-                    if (x + 200 > width)
-                        x -= 260;
-                    return x + "px";
-                  })
-                  .style("top", e.srcElement.cy.baseVal.value + "px");
+                  .style("background-color", d.Doping ? "rgb(252, 165, 165)" : "rgb(197, 228, 197)")
+                  .style("border-color", d.Doping ? "red" : "green")
               })
+            .on("mousemove", (e, d) => {
+                toolTip.style("left", e.layerX + 20 + "px")
+                    .style("top", e.layerY - yOffset + "px");
+            })
             .on("mouseout", () => {
                 toolTip.transition()
-                    .duration(300)
+                    .duration(100)
                     .style("opacity", 0);
 
                 toolTip.transition()
-                    .delay(300)
+                    .delay(100)
                     .style("display", "none")
               });
     })
